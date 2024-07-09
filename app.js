@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const ipInput = document.getElementById('ipInput');
     const lookupBtn = document.getElementById('lookupBtn');
     const loadingIndicator = document.getElementById('loadingIndicator');
-    const proxyServer = "http://7f883fc8.r3.cpolar.top"
+    const proxyServer = "http://20b94c01.r11.cpolar.top"
     try {
         const response = await fetch('https://ipinfo.io/ip');
         const ip = await response.text();
