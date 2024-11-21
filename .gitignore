@@ -108,6 +108,7 @@ venv.bak/
 .idea/
 .project/
 *.iml
+._*
 
 # my tests
 mytests/
