@@ -38,12 +38,16 @@ document.addEventListener('DOMContentLoaded', async () => {
                 // const response = await fetch(`${proxyServer}/proxy/ip?ip=${ipAddress}`);
                 // const response = await fetch(`${proxyServer}/?inputSearch=${ipAddress}`);
                 const response = await fetch(`${proxyServer}/proxy/ip?ip=${ipAddress}`, {
+                    method: 'GET',
+                    mode: 'cors',
                     headers: {
                         'Accept': 'text/html',
-                        'X-Requested-With': 'XMLHttpRequest'
                     },
-                    redirect: 'error' // 禁止重定向
+                    credentials: 'omit' // 除非需要cookies，否则使用omit
                 });
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
                 const data = await response.text();
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(data, 'text/html');
