@@ -17,7 +17,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         const ipDetails = await ipDetailsResponse.text();
         const parser = new DOMParser();
         const doc = parser.parseFromString(ipDetails, 'text/html');
-        const addressDiv = doc.querySelector('tbody tr:nth-child(2) div:nth-child(1)');
+        // const addressDiv = doc.querySelector('tbody tr:nth-child(2) div:nth-child(1)');
+        const addressDiv = doc.querySelector('tr[class="active"] td span');
         if (!addressDiv) {
             throw new Error('Failed to find addressDiv element.');
         }
@@ -38,7 +39,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const data = await response.text();
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(data, 'text/html');
-                const addressDiv = doc.querySelector('tbody tr:first-child td:nth-child(3)');
+                // const addressDiv = doc.querySelector('tbody tr:first-child td:nth-child(3)');
+                const addressDiv = doc.querySelector('tr[class="active"] td span');
                 const addressText = addressDiv ? addressDiv.textContent.trim() : '';
                 resultDiv.innerHTML = `您查询的IP: ${ipAddress}，其归属地为：${addressText}。`;
                 loadingIndicator.classList.add('hidden');
