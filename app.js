@@ -35,8 +35,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (validIPRegex.test(ipAddress)) {
             loadingIndicator.classList.remove('hidden');
             try {
-                const response = await fetch(`${proxyServer}/proxy/ip?ip=${ipAddress}`);
+                // const response = await fetch(`${proxyServer}/proxy/ip?ip=${ipAddress}`);
                 // const response = await fetch(`${proxyServer}/?inputSearch=${ipAddress}`);
+                const response = await fetch(`${proxyServer}/proxy/ip?ip=${ip}`, {
+                    headers: {
+                        'Accept': 'text/html',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    redirect: 'error' // 禁止重定向
+                });
                 const data = await response.text();
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(data, 'text/html');
