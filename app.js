@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             try {
                 // const response = await fetch(`${proxyServer}/proxy/ip?ip=${ipAddress}`);
                 // const response = await fetch(`${proxyServer}/?inputSearch=${ipAddress}`);
-                const response = await fetch(`${proxyServer}/proxy/ip?ip=${ip}`, {
+                const response = await fetch(`${proxyServer}/proxy/ip?ip=${ipAddress}`, {
                     headers: {
                         'Accept': 'text/html',
                         'X-Requested-With': 'XMLHttpRequest'
