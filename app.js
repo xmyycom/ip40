@@ -22,10 +22,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (!addressDiv) {
             throw new Error('Failed to find addressDiv element.');
         }
-        const addressText = addressDiv.textContent.trim();
+        // const addressText = addressDiv.textContent.trim();
+        const addressText = addressDiv ? addressDiv.textContent.trim() : '';
         resultDiv.innerHTML += `，您来自: ${addressText}。`;
     } catch (error) {
-    	  console.error(error);
+        console.error(error);
         resultDiv.innerHTML += '，获取IP归属地失败！';
     }
     lookupBtn.addEventListener('click', async () => {
@@ -45,6 +46,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 resultDiv.innerHTML = `您查询的IP: ${ipAddress}，其归属地为：${addressText}。`;
                 loadingIndicator.classList.add('hidden');
             } catch (error) {
+                console.error(error);
                 resultDiv.innerHTML = `您查询的IP: ${ipAddress}，获取IP归属地失败！`;
                 loadingIndicator.classList.add('hidden');
             }
