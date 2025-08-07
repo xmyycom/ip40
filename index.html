@@ -7,16 +7,63 @@
     <meta name="keywords" content="IP查询,IP Lookup,ip40.com">
     <title>IP查询 ip40.com</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="inter-swap.css">
+    <link rel="stylesheet" href="all.min.css">
 </head>
 <body>
-    <div class="container">
-        <h1>IP查询 <span>ip40.com</span></h1>
-        <input type="text" id="ipInput" placeholder="请输入您要查询的IP地址">
-        <button id="lookupBtn">查询</button>
-        <div id="loadingIndicator" class="hidden"><img src="spinner.gif" alt="Loading..." width="200"></div>
-        <div id="result"></div>
-        <div id="link"><a href="https://xmyy.com" target="_blank">虾米技术网 xmyy.com</a> <a href="https://ok118.com" target="_blank">网址导航 ok118.com</a></div>
+    <div class="background-animation">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+        </div>
     </div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <i class="fas fa-globe-americas"></i>
+                <h1>IP<span class="highlight">查询</span></h1>
+                <div class="subtitle">ip40.com</div>
+            </div>
+        </div>
+        
+        <div class="search-section">
+            <div class="input-group">
+                <i class="fas fa-search input-icon"></i>
+                <input type="text" id="ipInput" placeholder="请输入您要查询的IP地址" autocomplete="off">
+                <button id="lookupBtn" class="search-btn">
+                    <span class="btn-text">查询</span>
+                    <i class="fas fa-arrow-right btn-icon"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="loadingIndicator" class="loading-container hidden">
+            <div class="loading-spinner">
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+            </div>
+            <div class="loading-text">正在查询中...</div>
+        </div>
+        
+        <div id="result" class="result-container"></div>
+        
+        <div class="footer-links">
+            <a href="https://xmyy.com" target="_blank" class="footer-link">
+                <i class="fas fa-code"></i>
+                虾米技术网 xmyy.com
+            </a>
+            <a href="https://ok118.com" target="_blank" class="footer-link">
+                <i class="fas fa-compass"></i>
+                网址导航 ok118.com
+            </a>
+        </div>
+    </div>
+    
     <script src="app.js"></script>
 </body>
 </html>
