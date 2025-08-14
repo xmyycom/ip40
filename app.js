@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Enhanced result display with icons and styling
     function displayResult(ip, location, isCurrentIP = false) {
         const icon = isCurrentIP ? '<i class="fas fa-map-marker-alt" style="color: #40e0d0; margin-right: 8px;"></i>' : '<i class="fas fa-search-location" style="color: #8a2be2; margin-right: 8px;"></i>';
-        const prefix = isCurrentIP ? '您的当前IP是' : '查询IP';
+        const prefix = isCurrentIP ? '您的IP' : '查询IP';
         const htmlContent = `${icon}${prefix}: <span style="color: #40e0d0; font-weight: 600;">${ip}</span>${location ? `，归属地: <span style="color: #8a2be2; font-weight: 600;">${location}</span>` : ''}`;
         displayResultWithAnimation(resultDiv, htmlContent);
     }
